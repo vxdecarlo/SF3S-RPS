@@ -1,0 +1,115 @@
+    <script>
+      var w = "You Win";
+      var l = "You Lose";
+      var d = "Draw Game";
+
+      function p1wins() {
+        document.getElementById("descision").innerHTML = w;
+
+      }
+
+      function p1loses() {
+        document.getElementById("descision").innerHTML = l;
+
+      }
+
+      function draws() {
+        document.getElementById("descision").innerHTML = d;
+
+      }
+
+      function game(x) {
+        var comp;
+        var cpuplay;
+
+        var comp = Math.random();
+        //document.getElementById("play").innerHTML = "cpu value: " + comp;
+        //document.getElementById("vv").innerHTML = "your move: " + x;
+        if (comp < 0.3) {
+          cpuplay = 1;
+          document.getElementById("cpu").innerHTML = "Ken played: Parry";
+
+        } else if (comp < .45) {
+          cpuplay = 2;
+          document.getElementById("cpu").innerHTML = "Ken played: Attack";
+
+        } else {
+          cpuplay = 3;
+          document.getElementById("cpu").innerHTML = "Ken played: Throw";
+
+        }
+        if (x == cpuplay) {
+          if (x == 1) {
+            document.getElementById("result").innerHTML = "So meta! You both went for a parry!";
+            document.getElementById("ryu").src = "http://www.zweifuss.ca/colorswap.php?pcolorstring=RyuPalette.bin&pcolornum=0&pname=ryu/ryu-walkf.gif";
+            document.getElementById("ken").src = "http://www.zweifuss.ca/colorswap.php?pcolorstring=KenPalette.bin&pcolornum=0&pname=ken/ken-walkf.gif";
+
+          }
+          if (x == 2) {
+            document.getElementById("result").innerHTML = "Double Impact! You both traded damage!";
+            document.getElementById("ryu").src = "http://www.zweifuss.ca/colorswap.php?pcolorstring=RyuPalette.bin&pcolornum=0&pname=ryu/ryu-slam.gif";
+            document.getElementById("ken").src = "http://www.zweifuss.ca/colorswap.php?pcolorstring=KenPalette.bin&pcolornum=0&pname=ken/ken-slam.gif";
+
+          }
+          if (x == 3) {
+            document.getElementById("result").innerHTML = "Throw tech'd!";
+
+            document.getElementById("ryu").src = "http://www.zweifuss.ca/colorswap.php?pcolorstring=RyuPalette.bin&pcolornum=0&pname=ryu/ryu-dashb.gif";
+            document.getElementById("ken").src = "http://www.zweifuss.ca/colorswap.php?pcolorstring=KenPalette.bin&pcolornum=0&pname=ken/ken-dashb.gif";
+
+          }
+          draws();
+        } else if (x == 1) {
+
+          if (cpuplay == 2) {
+            document.getElementById("result").innerHTML = "Nice! You parried the attack!";
+            document.getElementById("ryu").src = "http://www.zweifuss.ca/colorswap.php?pcolorstring=RyuPalette.bin&pcolornum=0&pname=ryu/ryu-parry.gif";
+            document.getElementById("ken").src = "http://www.zweifuss.ca/colorswap.php?pcolorstring=KenPalette.bin&pcolornum=0&pname=ken/ken-mp.gif";
+            p1wins();
+
+
+          }
+          if (cpuplay == 3) {
+            document.getElementById("result").innerHTML = "Oh no! You were thrown!";
+            document.getElementById("ryu").src = "http://www.zweifuss.ca/colorswap.php?pcolorstring=RyuPalette.bin&pcolornum=0&pname=ryu/ryu-slam.gif";
+            document.getElementById("ken").src = "http://www.zweifuss.ca/colorswap.php?pcolorstring=KenPalette.bin&pcolornum=0&pname=ken/ken-throw-forward.gif";
+            p1loses();
+
+
+          }
+        } else if (x == 2) {
+          if (cpuplay == 1) {
+            document.getElementById("result").innerHTML = "Uh oh! Your attack was parried!";
+            document.getElementById("ryu").src = "http://www.zweifuss.ca/colorswap.php?pcolorstring=RyuPalette.bin&pcolornum=0&pname=ryu/ryu-mpc.gif";
+            document.getElementById("ken").src = "http://www.zweifuss.ca/colorswap.php?pcolorstring=KenPalette.bin&pcolornum=0&pname=ken/ken-parry.gif";
+            p1loses();
+
+          }
+          if (cpuplay == 3) {
+            document.getElementById("result").innerHTML = "Great hit! You snuffed his throw attempt!";
+            document.getElementById("ryu").src = "http://www.zweifuss.ca/colorswap.php?pcolorstring=RyuPalette.bin&pcolornum=0&pname=ryu/ryu-shoryuken.gif";
+            document.getElementById("ken").src = "http://www.zweifuss.ca/colorswap.php?pcolorstring=KenPalette.bin&pcolornum=0&pname=ken/ken-slam.gif";
+            p1wins();
+
+          }
+
+        }
+        if (x == 3) {
+          if (cpuplay == 2) {
+            document.getElementById("result").innerHTML = "Ouch! You got hit while going for a throw!";
+            document.getElementById("ryu").src = "http://www.zweifuss.ca/colorswap.php?pcolorstring=RyuPalette.bin&pcolornum=0&pname=ryu/ryu-twist.gif";
+            document.getElementById("ken").src = "http://www.zweifuss.ca/colorswap.php?pcolorstring=KenPalette.bin&pcolornum=0&pname=ken/ken-mk.gif";
+            p1loses();
+
+          }
+          if (cpuplay == 1) {
+            document.getElementById("result").innerHTML = "Great! Throw successful!";
+            document.getElementById("ryu").src = "http://www.zweifuss.ca/colorswap.php?pcolorstring=RyuPalette.bin&pcolornum=0&pname=ryu/ryu-throw-forward.gif";
+            document.getElementById("ken").src = "http://www.zweifuss.ca/colorswap.php?pcolorstring=KenPalette.bin&pcolornum=0&pname=ken/ken-slam.gif";
+            p1wins();
+
+          }
+        }
+      }
+
+    </script>
