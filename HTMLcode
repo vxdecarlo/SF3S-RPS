@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+  <body>
+
+    <h3 class="title" style="text-align:center">
+Street Fighter 3: Rock, Paper, Scissors
+</h3>
+    <hr>
+    <p>
+      What will Ryu do? Select move below:
+    </p>
+    <div>
+      <button onclick="game(1)">Parry</button>
+      <button onclick="game(2)">Attack</button>
+      <button onclick="game(3)">Throw</button>
+      <p class="judge"><b id="descision"></b></p>
+    </div>
+    <br>
+
+    <img id="ryu" src="http://www.zweifuss.ca/colorswap.php?pcolorstring=RyuPalette.bin&pcolornum=0&pname=ryu/ryu-stance.gif" />
+    <img class="p2" id="ken" src="http://www.zweifuss.ca/ken/kenstance.gif" />
+
+    <p id="play"></p>
+    <p id="cpu"></p>
+    <p id="vv"></p>
+    <p id="result"></p>
+    <hr>
+    <footer>
+      Thank you for playing! This little game was programmed with HTML, CSS, and Javascript by Vincent DeCarlo. Source code available <a href="https://jsfiddle.net/2y3m0e5k/3">here</a> The character sprites were ripped and hosted by <a href="http://www.zweifuss.ca/">zweifuss</a>.
+    </footer>
+
+  </body>
+
+</html>
